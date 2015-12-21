@@ -1,0 +1,37 @@
+{
+  "name": "micro-app-framework",
+  "version": "1.0.0",
+  "description": "Framework for building/running micro-apps",
+  "main": "lib/micro-app-framework.js",
+  "scripts": {
+    "start": "node lib/micro-app-framework.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "basic-auth": "~1.0.3",
+    "bcryptjs": "~2.3.0",
+    "crypto-js": "~3.1.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhdawson/micro-app-framework.git"
+  },
+  "keywords": [
+    "micro-app"
+    "framework"
+  ],
+  "author": {
+    "name": "Michael Dawson"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mhdawson/micro-app-framework/issues"
+  },
+  "homepage": "https://github.com/mhdawson/micro-app-framework#readme",
+  "contributors": [
+    {
+      "name": "Michael Dawson",
+      "email": "mdawson@devrus.com"
+    }
+  ]
+}
