@@ -1,6 +1,6 @@
 {
   "name": "micro-app-framework",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "Framework for building/running micro-apps",
   "main": "lib/micro-app-framework.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/mhdawson/micro-app-framework.git"
   },
   "keywords": [
-    "micro-app"
+    "micro-app",
     "framework"
   ],
   "author": {
