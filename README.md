@@ -15,18 +15,18 @@ authentication etc.
 The framework handles opening a pop-up page with the appropriate
 size of the application GUI page. If you configure the browser to
 allow javascript to close windows it will also close the window/page
-from which the application is launched
+from which the application is launched.
 
 # Examples
 
 Examples of existing apps using the framework are shown in the following sections.
 
 These existing micro-apps are a good starting point when you want
-to create your first application based on the framework
+to create your first application based on the framework.
 
 ## micro-app-timezones
 
-Simple micro-app to keep track of the current time for people you work with
+Simple micro-app to keep track of the current time for people you work with.
 
 [micr-app-timezones](https://www.npmjs.com/package/micro-app-timezones)
 
@@ -34,7 +34,7 @@ Simple micro-app to keep track of the current time for people you work with
 
 ## micro-app-phone-dialer
 
-Simple phone dialer for cisco phones
+Simple phone dialer for cisco phones.
 
 [micro-app-phone-dialer](https://www.npmjs.com/package/micro-app-phone-dialer)
 
@@ -43,7 +43,7 @@ Simple phone dialer for cisco phones
 ## micro-app-simple-dashboard
 
 Micro app to display a home dashboard showing temperature, power usage and other data collected
-from local sensors. The dashboard is updated in realtime using socket.io
+from local sensors. The dashboard is updated in realtime using socket.io.
 
 [micro-app-simple-dashboard](https://www.npmjs.com/package/micro-app-simple-dashboard)
 
@@ -54,42 +54,43 @@ from local sensors. The dashboard is updated in realtime using socket.io
 
 To build a micro-app using the framework you need to do the following:
 
-* Create Node.js application called **server.js**
-* Create html page template called **page.html.template**
-* Create configuration file called **config.json** 
-* Create **package.json** so that micro-app can be published as an npm
+* create Node.js application called **server.js**
+* create html page template called **page.html.template**
+* create configuration file called **config.json** 
+* create **package.json** so that micro-app can be published as an npm
 
 ## Server.js
 
 Server.js must define an object called "Sever" which must support 
 the following methods:
 
-* getDefaults() - must return an object which has fields which define
+* **getDefaults()** - must return an object which has fields which define
   the default configuration values for the application. For example
   returning { 'title': 'House Data' } sets the default title to 
   House Data.  These values can be overridden by the conents of
-  config.json
-* getTemplateReplacemnts() - must return an array of objects each
+  config.json.
+* **getTemplateReplacemnts()** - must return an array of objects each
   of which has a 'key' and 'value' field.  Each instance of the key
-  in page.html.template will be substituted with the value provided
-* startServer(server) - called when the configuration has been read in
+  in page.html.template will be substituted with the value provided.
+* **startServer(server)** - called when the configuration has been read in
   and the application is ready to start.  At this point Server.config
   will have all of the configuration values for the application.
-* handleSupportingPages(request, response) - this can optionally be 
+* **handleSupportingPages(request, response)** - this can optionally be 
   provided to support returning page content other than the main page.
   If this function handles a page it should return true and have 
   both written and ended the response.  Otherwise its should return
-  false. This can be used to provide supporting scripts etc.
+  false. This can be used to provide supporting scripts for the main
+  page. 
 
-The applicaiton can define its own substitutions in page.html.template
-but in addition the frameworks uses/provides the following by default:
+The applicaiton can define its own substitutions in **page.html.template**
+but in addition the framework uses/provides the following by default:
 
 * &lt;URL_TYPE&gt; - either http or https depending on wether tls is enabled.
   This is provided by the framework, no need to provide in 
-  getTemplateReplacements()
-* &lt;TITLE&gt; - title for the app page
-* &lt;PAGE_WIDTH&gt; - width for the page opened for the application
-* &lt;PAGE_HEIGHT&gt; - height for the page opened for the application
+  getTemplateReplacements().
+* &lt;TITLE&gt; - title for the app page.
+* &lt;PAGE_WIDTH&gt; - width for the page opened for the application.
+* &lt;PAGE_HEIGHT&gt; - height for the page opened for the application.
  
 
 In order to allow the micro-app to be started on its own (as opposed
@@ -132,24 +133,24 @@ the values in Server.config.
 
 The following are supported by the framework itself:
 
-* serverPort - the port on which the server will listen (currently required
+* **serverPort** - the port on which the server will listen (currently required
   although a default will be supported in a later version).
-* title - the value that will be used for the &lt;TITLE&gt; substitution.
-* tls - if this value is the string "true" then the server will only 
+* **title** - the value that will be used for the &lt;TITLE&gt; substitution.
+* **tls** - if this value is the string "true" then the server will only 
   support connections using tls.  In this case there must be a
   cert.pem and key.pem which contain the key and certificate that
   will be used by the server.  
-* authenticate - if the value is the string "true" then basic authentication
+* **authenticate** - if the value is the string "true" then basic authentication
   will be required by the application and config.json must include 
   the field 'authInfo" as described below.
-* authInfo - object with the fields 'username', 'password' and 'realm'.  
+* **authInfo** - object with the fields 'username', 'password' and 'realm'.  
   The password is a hashed value which can be created using the script
   gen_password.js which is located in the lib directory for the 
   micro-app-framework.
 
 The application can add any additional configuration values that will 
 be accessible through Server.config.  In addition, if authentication is
-enabled the value can be encrypted. In this case the value can 
+enabled the value can be encrypted. In this case, the value can 
 be decrypted using Server.decryptConfigValue(value).  The function
 decryptConfigValue() will be added to the Server object after 
 authentication is complete and can be used in getTemplateReplacements().
