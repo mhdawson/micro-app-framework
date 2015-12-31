@@ -1,6 +1,6 @@
 {
   "name": "micro-app-framework",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Framework for building/running micro-apps",
   "main": "lib/micro-app-framework.js",
   "scripts": {
