@@ -155,7 +155,6 @@ be decrypted using Server.decryptConfigValue(value).  The function
 decryptConfigValue() will be added to the Server object after 
 authentication is complete and can be used in getTemplateReplacements().
 
-
 If required the key/certificate can be created using a command along 
 these lines:
 
@@ -179,6 +178,19 @@ node lib/enc_config_value.js value mypassword
 
 where value is the configuration value to be encrypted and mypassword must
 be the same password configured for basic authentication.
+
+
+The following are are also supported by the framework and useful for debugging:
+
+* **useLaunchWindow** - if set to the string "true" open the micro-app in the
+  launch window/tab as opposed to a pop-up. Useful for debugging so you can
+  more easily get the developer tools for the page.
+
+* **closeLaunchWindow** - if set to the string "true" and useLaunchWindow is
+  not set, then after opening the pop-up don't close the original launch
+  window/tab.  Useful for debugging or when you just don't want the window
+  to be closed after launch.
+
 
 ## package.json
 
