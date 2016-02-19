@@ -17,6 +17,13 @@ size of the application GUI page. If you configure the browser to
 allow javascript to close windows it will also close the window/page
 from which the application is launched.
 
+**New** You can now get native look and feel for micro-apps without
+changing the app itself. It also removes the browser address bar
+making the application window more compact.  See the project
+[micro-app-electron-launcher]
+(https://github.com/mhdawson/micro-app-electron-launcher)
+for details.
+
 # Examples
 
 Examples of existing apps using the framework are shown in the following sections.
@@ -239,9 +246,6 @@ package.json)
 
 * add option to configure the server, in particular need to be 
   able to limit it to using only the loopback address.
-* would be nice to find a way to support a borderless window
-  standard browsers don't support this for security
-  but might be possible through something custom based on webkit.
 * move over [HomeAlarm}(https://github.com/mhdawson/HomeAlarm) 
   and any updates required for it.
 
