@@ -143,6 +143,8 @@ The following are supported by the framework itself:
 * **serverPort** - the port on which the server will listen (currently required
   although a default will be supported in a later version).
 * **title** - the value that will be used for the &lt;TITLE&gt; substitution.
+* **scrollBars** - allow vertical scrollbars if content it bigger than
+  window
 * **tls** - if this value is the string "true" then the server will only 
   support connections using tls.  In this case there must be a
   cert.pem and key.pem which contain the key and certificate that
