@@ -248,7 +248,5 @@ package.json)
 
 * add option to configure the server, in particular need to be 
   able to limit it to using only the loopback address.
-* move over [HomeAlarm}(https://github.com/mhdawson/HomeAlarm) 
-  and any updates required for it.
 
 
